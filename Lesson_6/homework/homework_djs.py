@@ -108,6 +108,6 @@ if __name__ == "__main__":
             update_dj = input(f"What dj do you want to update? {names}: ")
             new_data = update_data(djs)
             if new_data:
-                print("Data was updated!")
+                print("Data was updated.")
         else:
             print(f"Please use allowed options! {allowed_options}")
