@@ -76,6 +76,14 @@ def update_data(data):
             elem[name] = data_input
     return data
 
+
+def delete(data):
+    for elem in data:
+        if elem["name"] == delete_dj:
+            djs.remove(elem)
+            print(f"Dj {delete_dj} was deleted")
+    return data
+
 if __name__ == "__main__":
     djs = [tiesto, avicci, anna]
     allowed_options = "[add/list/update/delete/names/exit]"
@@ -99,10 +107,8 @@ if __name__ == "__main__":
             names = [dj["name"] for dj in djs]
             pprint(f"Names of djs {names}")
             delete_dj = input("Please enter name of dj for delete: ")
-            for elem in djs:
-                if elem["name"] == delete_dj:
-                    djs.remove(elem)
-                    print(f"Dj {delete_dj} was deleted")
+            delete(djs)
+
         elif desision == "update":
             names = [dj["name"] for dj in djs]
             update_dj = input(f"What dj do you want to update? {names}: ")
