@@ -13,8 +13,8 @@ class Product:
         print(f"Description: {self.get_product_description()}")
 
     def get_price(self):
-        new_price = self.price * self.discount
-        print(f"New price for {self.name} - {new_price}")
+        price = self.price * self.discount
+        print(f"New price for {self.name} - {price}")
 
 
 class Phone(Product):
@@ -46,11 +46,10 @@ class Laptop(Product):
         self.material = material
 
     def get_product_description(self):
-        new_price = self.price * self.discount if self.discount else self.price
-        self.price = new_price
+        price = self.price * self.discount if self.discount else self.price
+        self.price = price
         return f"{self.name}/{self.color}: {self.price} | {self.amount}, {self.motherboard_type}," \
-                f" material - {self.material}"
-
+               f" material - {self.material}"
 
 
 iphone7 = Phone(name="iPhone 7", color="red", price=700.0, amount=1, discount=0.50)
@@ -58,12 +57,10 @@ iphone13 = Phone(name="iPhone 13", color="black", price=2000.0, amount=2, lte=Tr
 lenovo = Laptop(name="Lenovo", color="grey", price=3000.0, amount=1, discount=2, motherboard_type="ATX",
                 material="steel")
 
-
 iphone13.show_description()
 iphone7.show_description()
 
 lenovo.show_description()
-
 
 iphone13.get_price()
 iphone7.get_price()
